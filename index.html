@@ -10,11 +10,17 @@
 <body>
     <section class="hero">
         <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="leaves-container"></div>
         <div class="hero-content">
-            <div class="calendar-date">
-                <div class="calendar-month">ОКТЯБРЬ</div>
-                <div class="calendar-day">18</div>
-                <div class="calendar-year">2025</div>
+            <div class="calendar-cubes">
+                <div class="cube">
+                    <div class="cube-top">18</div>
+                    <div class="cube-front">18</div>
+                    <div class="cube-side"></div>
+                </div>
+                <div class="cube-month">ОКТЯБРЬ</div>
+                <div class="cube-year">2025</div>
             </div>
             <h1>Анастасия & Виталий</h1>
             <div id="countdown"></div>
@@ -68,7 +74,6 @@
     <section class="rsvp">
         <div class="container">
             <h2>Подтверждение присутствия</h2>
-            <p>Пожалуйста, подтвердите ваше участие до 1 октября 2025 года</p>
             <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                 <input type="text" name="name" placeholder="Ваше имя" required>
                 <input type="tel" name="phone" placeholder="Ваш телефон">
@@ -92,7 +97,6 @@
                 </div>
                 
                 <input type="number" name="guests" placeholder="Количество человек" min="1" required>
-                <textarea name="message" placeholder="Ваши пожелания или особые пожелания по меню (аллергии, предпочтения)"></textarea>
                 <button type="submit">Подтвердить</button>
             </form>
             <p id="form-success" style="display: none; color: green; margin-top: 20px;">Спасибо! Ваш ответ получен!</p>

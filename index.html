@@ -60,11 +60,104 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="invitation-text">
+                <p>Приглашаем вас на нашу свадьбу!</p>
+            </div>
+            
             <h1>Анастасия & Виталий</h1>
             <div id="countdown"></div>
         </div>
     </section>
 
-    <!-- Остальная часть файла без изменений -->
+    <section class="details">
+        <div class="container">
+            <h2>Детали свадьбы</h2>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h3 class="ceremony">Церемония</h3>
+                    <p>18 октября 2025, 12:00</p>
+                    <p>ЗАГС города Алушты</p>
+                    <p>ул. 15-го Апреля, 10, Алушта</p>
+                    <a href="https://yandex.ru/maps/org/zags/1126549878/?ll=34.399307%2C44.663968&z=16" class="map-link" target="_blank">Посмотреть на карте</a>
+                    <p class="note">Если вам неудобно в это время, мы не обидимся и ждём вас на банкете!</p>
+                </div>
+                <div class="detail-item">
+                    <h3 class="banquet">Банкет</h3>
+                    <p>18 октября 2025, 17:00</p>
+                    <p>Ресторан «Ангарский перевал»</p>
+                    <p>городской округ Алушта</p>
+                    <a href="https://yandex.ru/maps/org/anbarskiy_pereval/1725793486/?ll=34.392807%2C44.664326&z=16" class="map-link" target="_blank">Посмотреть на карте</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dress-code">
+        <div class="container">
+            <h2>Дресс-код</h2>
+            <p>Мы будем благодарны, если вы выберете наряды в пастельных тонах и воздержитесь от ярких цветов. Белый цвет оставим для невесты.</p>
+            <div class="color-palette">
+                <div class="color-box" style="background-color: #f5d3c8;"></div>
+                <div class="color-box" style="background-color: #d9e6dc;"></div>
+                <div class="color-box" style="background-color: #e3d9ca;"></div>
+                <div class="color-box" style="background-color: #d1cfe2;"></div>
+                <div class="color-box" style="background-color: #f2e6de;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gifts">
+        <div class="container">
+            <h2>Подарки</h2>
+            <p>Просим отказаться от цветов в качестве подарка, потому что мы не успеем насладиться их красотой и ароматом. Будем рады, если в качестве подарка вы пополните нашу семейную казну.</p>
+        </div>
+    </section>
+
+    <section class="rsvp">
+        <div class="container">
+            <h2>Подтверждение присутствия</h2>
+            <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="tel" name="phone" placeholder="Ваш телефон">
+                
+                <div class="attendance-options">
+                    <p>Вы сможете присутствовать?</p>
+                    <div class="option-buttons">
+                        <label class="option-button">
+                            <input type="radio" name="attendance" value="ceremony_and_banquet" required>
+                            <span>На церемонии и банкете</span>
+                        </label>
+                        <label class="option-button">
+                            <input type="radio" name="attendance" value="only_banquet">
+                            <span>Только на банкете</span>
+                        </label>
+                        <label class="option-button">
+                            <input type="radio" name="attendance" value="not_attending">
+                            <span>Не смогу присутствовать</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <input type="number" name="guests" placeholder="Количество человек" min="1" required>
+                <button type="submit">Подтвердить</button>
+            </form>
+            <p id="form-success" style="display: none; color: green; margin-top: 20px;">Спасибо! Ваш ответ получен!</p>
+        </div>
+    </section>
+
+    <section class="contacts">
+        <div class="container">
+            <h2>Контакты</h2>
+            <p>По всем вопросам обращайтесь к Анастасии:</p>
+            <p><a href="tel:+79782893791">+7 978 289-37-91</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>С любовью, Анастасия и Виталий</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

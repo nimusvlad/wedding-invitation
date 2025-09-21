@@ -1,12 +1,15 @@
-/* Сиренево-фиолетовая цветовая палитра */
+/* Обновленная пастельная цветовая палитра */
 :root {
-    --lavender-light: #F5F0FF; /* Светлый лавандовый для фона */
-    --lavender: #E6D7FF;       /* Лавандовый */
-    --lilac: #D0B8FF;         /* Сиреневый */
-    --purple: #8A63D2;        /* Фиолетовый для акцентов */
-    --purple-dark: #6640A3;   /* Темно-фиолетовый */
+    --pastel-pink: #F2D0D9;      /* Нежно-розовый */
+    --pastel-lavender: #D0B8FF;  /* Лавандовый */
+    --pastel-blue: #B8C6D9;      /* Пастельно-голубой */
+    --pastel-peach: #E7CEBA;     /* Персиковый */
+    --pastel-mint: #DEECEA;      /* Мятный */
+    --pastel-purple: #8A63D2;    /* Фиолетовый для акцентов */
+    --pastel-dark: #6640A3;      /* Темно-фиолетовый */
+    --cream: #FFF8F5;            /* Кремовый для фона */
     --white: #FFFFFF;
-    --gray-light: #F8F6FF;    /* Светло-серый с фиолетовым оттенком */
+    --gray-light: #F8F6FF;
 }
 
 /* Общие стили для всего документа */
@@ -18,15 +21,15 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    color: var(--purple-dark);
+    color: var(--pastel-dark);
     line-height: 1.6;
-    background: var(--lavender-light);
+    background: var(--cream);
 }
 
 h1, h2, h3 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
-    color: var(--purple);
+    color: var(--pastel-purple);
 }
 
 .container {
@@ -38,14 +41,29 @@ h1, h2, h3 {
 /* Стили для главного экрана */
 .hero {
     height: 100vh;
-    color: var(--purple-dark);
+    color: var(--pastel-dark);
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    background: var(--lavender-light);
+    background: var(--cream);
+}
+
+/* Цветочный орнамент на фоне */
+.floral-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23D0B8FF' fill-opacity='0.15' d='M50,30c5.5,0,10,4.5,10,10c0,5.5-4.5,10-10,10c-5.5,0-10-4.5-10-10C40,34.5,44.5,30,50,30z M50,0 c5.5,0,10,4.5,10,10c0,5.5-4.5,10-10,10c-5.5,0-10-4.5-10-10C40,4.5,44.5,0,50,0z M50,60c5.5,0,10,4.5,10,10c0,5.5-4.5,10-10,10 c-5.5,0-10-4.5-10-10C40,64.5,44.5,60,50,60z M20,30c5.5,0,10,4.5,10,10c0,5.5-4.5,10-10,10c-5.5,0-10-4.5-10-10C10,34.5,14.5,30,20,30z M80,30c5.5,0,10,4.5,10,10c0,5.5-4.5,10-10,10c-5.5,0-10-4.5-10-10C70,34.5,74.5,30,80,30z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 300px;
+    background-repeat: repeat;
+    opacity: 0.4;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .petals-container {
@@ -63,7 +81,7 @@ h1, h2, h3 {
     position: absolute;
     width: 24px;
     height: 36px;
-    background: var(--lilac);
+    background: var(--pastel-lavender);
     opacity: 0.7;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     animation-name: falling-petal;
@@ -74,14 +92,14 @@ h1, h2, h3 {
 }
 
 .petal:nth-child(4n) {
-    background: var(--lavender);
+    background: var(--pastel-pink);
     width: 20px;
     height: 30px;
     opacity: 0.6;
 }
 
 .petal:nth-child(3n) {
-    background: var(--purple);
+    background: var(--pastel-peach);
     width: 28px;
     height: 42px;
     opacity: 0.5;
@@ -121,7 +139,7 @@ h1, h2, h3 {
 .hero h1 {
     font-size: 4.5rem;
     margin: 0 0 2rem 0;
-    color: var(--purple);
+    color: var(--pastel-purple);
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
     order: 2;
 }
@@ -134,7 +152,7 @@ h1, h2, h3 {
 
 .invitation-text p {
     font-size: 2.5rem;
-    color: var(--purple);
+    color: var(--pastel-purple);
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
@@ -150,7 +168,7 @@ h1, h2, h3 {
     top: 50%;
     width: 80px;
     height: 3px;
-    background: var(--lilac);
+    background: var(--pastel-lavender);
 }
 
 .invitation-text p:before {
@@ -175,7 +193,7 @@ h1, h2, h3 {
 }
 
 .calendar-header {
-    background: linear-gradient(135deg, var(--lilac) 0%, var(--purple) 100%);
+    background: linear-gradient(135deg, var(--pastel-lavender) 0%, var(--pastel-purple) 100%);
     color: var(--white);
     padding: 1rem;
     font-weight: bold;
@@ -192,7 +210,7 @@ h1, h2, h3 {
     gap: 5px;
     margin-bottom: 10px;
     font-size: 0.8rem;
-    color: var(--purple);
+    color: var(--pastel-purple);
     opacity: 0.7;
 }
 
@@ -211,7 +229,7 @@ h1, h2, h3 {
     padding: 8px;
     border-radius: 50%;
     font-size: 0.9rem;
-    color: var(--purple-dark);
+    color: var(--pastel-dark);
 }
 
 .days .empty {
@@ -219,10 +237,10 @@ h1, h2, h3 {
 }
 
 .days .wedding-day {
-    background: linear-gradient(135deg, var(--lilac) 0%, var(--purple) 100%);
+    background: linear-gradient(135deg, var(--pastel-lavender) 0%, var(--pastel-purple) 100%);
     color: var(--white);
     font-weight: bold;
-    box-shadow: 0 0 0 3px var(--white), 0 0 0 5px var(--lilac);
+    box-shadow: 0 0 0 3px var(--white), 0 0 0 5px var(--pastel-lavender);
     animation: pulse 2s infinite;
 }
 
@@ -235,7 +253,7 @@ h1, h2, h3 {
 /* Стили для обратного отсчета */
 #countdown {
     font-size: 1.5rem;
-    color: var(--purple);
+    color: var(--pastel-purple);
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
     margin: 0;
     background: rgba(230, 215, 255, 0.3);
@@ -266,7 +284,7 @@ section {
 h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: var(--purple);
+    color: var(--pastel-purple);
     position: relative;
     display: inline-block;
 }
@@ -278,7 +296,7 @@ h2:after {
     left: 25%;
     width: 50%;
     height: 3px;
-    background-color: var(--lilac);
+    background-color: var(--pastel-lavender);
 }
 
 /* Сетка для деталей */
@@ -293,47 +311,47 @@ h2:after {
     flex: 1;
     min-width: 250px;
     padding: 2rem;
-    border: 2px solid var(--lavender);
+    border: 2px solid var(--pastel-lavender);
     border-radius: 10px;
-    background-color: rgba(230, 215, 255, 0.3);
+    background-color: rgba(208, 184, 255, 0.2);
 }
 
 .detail-item h3 {
     margin-bottom: 1rem;
-    color: var(--purple);
+    color: var(--pastel-purple);
     font-size: 1.8rem;
 }
 
 /* Увеличиваем конкретно "Церемония" и "Банкет" */
 .ceremony, .banquet {
     font-size: 2.2rem !important;
-    color: var(--purple);
+    color: var(--pastel-purple);
 }
 
 .map-link {
     display: inline-block;
     margin-top: 1rem;
-    color: var(--purple);
+    color: var(--pastel-purple);
     text-decoration: none;
     font-weight: bold;
 }
 
 .map-link:hover {
     text-decoration: underline;
-    color: var(--purple-dark);
+    color: var(--pastel-dark);
 }
 
 .note {
     font-style: italic;
     margin-top: 1rem;
-    color: var(--purple);
+    color: var(--pastel-purple);
     opacity: 0.8;
     font-size: 0.9rem;
 }
 
 /* Стили для раздела с дресс-кодом */
 .dress-code {
-    background-color: rgba(230, 215, 255, 0.4);
+    background-color: rgba(242, 208, 217, 0.4);
 }
 
 .color-palette {
@@ -354,7 +372,7 @@ h2:after {
 
 /* Стили для раздела с подарками */
 .gifts {
-    background-color: rgba(245, 240, 255, 0.5);
+    background-color: rgba(222, 236, 234, 0.5);
 }
 
 /* Стили для формы RSVP */
@@ -373,7 +391,7 @@ h2:after {
 
 #rsvp-form input, #rsvp-form select {
     padding: 0.8rem;
-    border: 2px solid var(--lavender);
+    border: 2px solid var(--pastel-lavender);
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
     background-color: rgba(245, 240, 255, 0.7);
@@ -381,7 +399,7 @@ h2:after {
 
 #rsvp-form button {
     padding: 1rem;
-    background-color: var(--purple);
+    background-color: var(--pastel-purple);
     color: white;
     border: none;
     border-radius: 5px;
@@ -393,7 +411,7 @@ h2:after {
 }
 
 #rsvp-form button:hover {
-    background-color: var(--purple-dark);
+    background-color: var(--pastel-dark);
 }
 
 /* Стили для кружков выбора */
@@ -404,7 +422,7 @@ h2:after {
 .attendance-options p {
     margin-bottom: 1rem;
     font-weight: bold;
-    color: var(--purple);
+    color: var(--pastel-purple);
 }
 
 .option-buttons {
@@ -417,7 +435,7 @@ h2:after {
     display: flex;
     align-items: center;
     padding: 0.8rem;
-    border: 2px solid var(--lavender);
+    border: 2px solid var(--pastel-lavender);
     border-radius: 50px;
     background-color: rgba(245, 240, 255, 0.7);
     cursor: pointer;
@@ -425,12 +443,12 @@ h2:after {
 }
 
 .option-button:hover {
-    background-color: var(--lavender);
+    background-color: var(--pastel-lavender);
 }
 
 .option-button input[type="radio"] {
     margin-right: 10px;
-    accent-color: var(--purple);
+    accent-color: var(--pastel-purple);
 }
 
 .option-button span {
@@ -439,17 +457,17 @@ h2:after {
 
 /* Стили для контактов */
 .contacts {
-    background-color: rgba(230, 215, 255, 0.4);
+    background-color: rgba(184, 198, 217, 0.4);
 }
 
 .contacts a {
-    color: var(--purple);
+    color: var(--pastel-purple);
     text-decoration: none;
     font-weight: bold;
 }
 
 .contacts a:hover {
-    color: var(--purple-dark);
+    color: var(--pastel-dark);
     text-decoration: underline;
 }
 
@@ -457,7 +475,7 @@ h2:after {
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: var(--purple);
+    background-color: var(--pastel-purple);
     color: white;
 }
 

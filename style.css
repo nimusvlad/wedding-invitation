@@ -1,4 +1,4 @@
-/* Осенняя цветовая палитра */
+/* Осенняя цветовая палитра - явные значения для независимости от темы */
 :root {
     --autumn-orange: #E67E22;
     --autumn-red: #D35400;
@@ -7,6 +7,9 @@
     --autumn-cream: #FEF5E7;
     --autumn-light-orange: #FFE4C4;
     --autumn-dark-orange: #E67E22;
+    --autumn-white: #FFFFFF;
+    --autumn-black: #333333;
+    --autumn-gray: #9E9E9E;
 }
 
 /* Общие стили для всего документа */
@@ -18,7 +21,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    color: #333;
+    color: var(--autumn-black);
     line-height: 1.6;
     background: linear-gradient(135deg, var(--autumn-light-orange) 0%, var(--autumn-beige) 100%);
 }
@@ -38,7 +41,7 @@ h1, h2, h3 {
 /* Стили для главного экрана */
 .hero {
     height: 100vh;
-    color: #fff;
+    color: var(--autumn-black);
     text-align: center;
     display: flex;
     align-items: center;
@@ -56,19 +59,37 @@ h1, h2, h3 {
     height: 100%;
     z-index: 1;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .leaf {
     position: absolute;
-    width: 40px;
-    height: 40px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E67E22' opacity='0.6'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    background: var(--autumn-orange);
     opacity: 0.6;
+    border-radius: 50% 50% 50% 0;
     animation-name: falling-leaf;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+    transform-origin: center;
+}
+
+.leaf:nth-child(4n) {
+    background: var(--autumn-red);
+    width: 25px;
+    height: 25px;
+}
+
+.leaf:nth-child(3n) {
+    background: var(--autumn-brown);
+    width: 35px;
+    height: 35px;
+    opacity: 0.4;
+}
+
+.leaf:nth-child(5n) {
+    border-radius: 50% 0 50% 50%;
 }
 
 @keyframes falling-leaf {
@@ -78,6 +99,7 @@ h1, h2, h3 {
     }
     50% {
         opacity: 0.8;
+        transform: translateY(50vh) translateX(50px) rotate(180deg);
     }
     100% {
         transform: translateY(100vh) translateX(100px) rotate(360deg);
@@ -98,69 +120,71 @@ h1, h2, h3 {
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
-/* Стиль для календарных кубиков */
-.calendar-cubes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Стили для мини-календаря */
+.mini-calendar {
+    background: var(--autumn-white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     margin-bottom: 3rem;
+    overflow: hidden;
+    width: 300px;
+    display: inline-block;
 }
 
-.cube {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    transform-style: preserve-3d;
-    transform: rotateX(-15deg) rotateY(15deg);
-    margin-bottom: 20px;
-}
-
-.cube-front, .cube-top, .cube-side {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3.5rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.cube-front {
+.calendar-header {
     background: linear-gradient(135deg, var(--autumn-orange) 0%, var(--autumn-red) 100%);
-    transform: translateZ(60px);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.cube-top {
-    background: linear-gradient(135deg, var(--autumn-red) 0%, var(--autumn-brown) 100%);
-    transform: rotateX(90deg) translateZ(60px);
-    border-radius: 10px;
-}
-
-.cube-side {
-    background: linear-gradient(135deg, var(--autumn-brown) 0%, #5a2d1d 100%);
-    transform: rotateY(90deg) translateZ(60px);
-    border-radius: 10px;
-}
-
-.cube-month {
-    font-size: 1.8rem;
+    color: var(--autumn-white);
+    padding: 1rem;
     font-weight: bold;
-    color: var(--autumn-brown);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 0.5rem;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
 }
 
-.cube-year {
-    font-size: 1.8rem;
-    color: var(--autumn-brown);
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+.calendar-body {
+    padding: 1rem;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    color: var(--autumn-gray);
+}
+
+.weekdays span {
+    text-align: center;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.days span {
+    text-align: center;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 0.9rem;
+}
+
+.days .empty {
+    background: transparent;
+}
+
+.days .wedding-day {
+    background: linear-gradient(135deg, var(--autumn-orange) 0%, var(--autumn-red) 100%);
+    color: var(--autumn-white);
+    font-weight: bold;
+    box-shadow: 0 0 0 3px var(--autumn-white), 0 0 0 5px var(--autumn-orange);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 /* Стили для обратного отсчета */
@@ -394,17 +418,8 @@ footer {
         font-size: 3rem;
     }
     
-    .cube {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .cube-front, .cube-top, .cube-side {
-        font-size: 2.5rem;
-    }
-    
-    .cube-month, .cube-year {
-        font-size: 1.5rem;
+    .mini-calendar {
+        width: 280px;
     }
     
     .details-grid {

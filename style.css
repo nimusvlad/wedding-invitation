@@ -349,9 +349,10 @@ h2:after {
     font-size: 0.9rem;
 }
 
-/* Стили для раздела с дресс-кодом */
+/* Стили для раздела с дресс-кодом - ИСПРАВЛЕНО */
 .dress-code {
-    background-color: rgba(242, 208, 217, 0.4);
+    background-color: rgba(255, 255, 255, 0.8); /* Белый с легкой прозрачностью */
+    border: 2px solid var(--pastel-lavender); /* Лавандовая рамка */
 }
 
 .color-palette {
@@ -372,7 +373,7 @@ h2:after {
 
 /* Стили для раздела с подарками */
 .gifts {
-    background-color: rgba(222, 236, 234, 0.5);
+    background-color: rgba(222, 236, 234, 0.3); /* Светлый мятный */
 }
 
 /* Стили для формы RSVP */
@@ -455,9 +456,10 @@ h2:after {
     flex: 1;
 }
 
-/* Стили для контактов */
+/* Стили для контактов - ИСПРАВЛЕНО */
 .contacts {
-    background-color: rgba(184, 198, 217, 0.4);
+    background-color: rgba(255, 255, 255, 0.8); /* Белый с легкой прозрачностью */
+    border: 2px solid var(--pastel-blue); /* Голубая рамка */
 }
 
 .contacts a {

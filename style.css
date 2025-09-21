@@ -120,12 +120,47 @@ h1, h2, h3 {
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
+/* Стили для текста приглашения */
+.invitation-text {
+    margin: 2rem 0;
+}
+
+.invitation-text p {
+    font-size: 1.8rem;
+    color: var(--autumn-brown);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    position: relative;
+    display: inline-block;
+}
+
+.invitation-text p:before,
+.invitation-text p:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 2px;
+    background: var(--autumn-orange);
+}
+
+.invitation-text p:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.invitation-text p:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
 /* Стили для мини-календаря */
 .mini-calendar {
     background: var(--autumn-white);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     overflow: hidden;
     width: 300px;
     display: inline-block;
@@ -416,6 +451,15 @@ footer {
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 3rem;
+    }
+    
+    .invitation-text p {
+        font-size: 1.5rem;
+    }
+    
+    .invitation-text p:before,
+    .invitation-text p:after {
+        width: 30px;
     }
     
     .mini-calendar {

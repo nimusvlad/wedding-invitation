@@ -36,18 +36,24 @@ document.getElementById('rsvp-form').addEventListener('submit', function(event) 
     }, 5000);
 });
 
-// Создаем анимацию падающих листьев
+// Создаем анимацию падающих оранжевых листьев
 function createLeaves() {
     const leavesContainer = document.querySelector('.leaves-container');
-    const leafSymbols = ['🍂', '🍁'];
+    const leafTypes = [
+        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E67E22' opacity='0.6'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E",
+        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D35400' opacity='0.5'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E",
+        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C86B39' opacity='0.7'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E"
+    ];
     
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 25; i++) {
         const leaf = document.createElement('div');
         leaf.classList.add('leaf');
         leaf.style.left = `${Math.random() * 100}%`;
-        leaf.style.fontSize = `${Math.random() * 20 + 15}px`;
-        leaf.style.opacity = `${Math.random() * 0.3 + 0.1}`;
-        leaf.style.animationDuration = `${Math.random() * 10 + 5}s`;
+        leaf.style.width = `${Math.random() * 30 + 20}px`;
+        leaf.style.height = `${Math.random() * 30 + 20}px`;
+        leaf.style.backgroundImage = leafTypes[Math.floor(Math.random() * leafTypes.length)];
+        leaf.style.opacity = `${Math.random() * 0.4 + 0.3}`;
+        leaf.style.animationDuration = `${Math.random() * 10 + 8}s`;
         leaf.style.animationDelay = `${Math.random() * 5}s`;
         leavesContainer.appendChild(leaf);
     }

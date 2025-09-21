@@ -88,7 +88,7 @@ h1, h2, h3 {
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     transform-origin: center;
-    box-shadow: 极 0 10px rgba(142, 102, 214, 0.2);
+    box-shadow: 0 0 10px rgba(142, 102, 214, 0.2);
 }
 
 .petal:nth-child(4n) {
@@ -100,7 +100,7 @@ h1, h2, h3 {
 
 .petal:nth-child(3n) {
     background: var(--pastel-peach);
-    width极 28px;
+    width: 28px;
     height: 42px;
     opacity: 0.5;
 }
@@ -138,7 +138,7 @@ h1, h2, h3 {
 
 .hero h1 {
     font-size: 4.5rem;
-    margin: 0 0 2极 0;
+    margin: 0 0 2rem 0;
     color: var(--pastel-purple);
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
     order: 2;
@@ -171,7 +171,7 @@ h1, h2, h3 {
     background: var(--pastel-lavender);
 }
 
-.invitation极 p:before {
+.invitation-text p:before {
     right: 100%;
     margin-right: 20px;
 }
@@ -193,7 +193,7 @@ h1, h2, h3 {
 }
 
 .calendar-header {
-    background: linear-gradient(135deg, var(--pastel-lavender) 0%, var(--pastel-purple) 极 100%);
+    background: linear-gradient(135deg, var(--pastel-lavender) 0%, var(--pastel-purple) 100%);
     color: var(--white);
     padding: 1rem;
     font-weight: bold;
@@ -220,7 +220,7 @@ h1, h2, h3 {
 
 .days {
     display: grid;
-    grid-template-columns: repeat极 1fr);
+    grid-template-columns: repeat(7, 1fr);
     gap: 5px;
 }
 
@@ -271,14 +271,13 @@ section {
 
 .details, .dress-code, .gifts, .contacts, .rsvp {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     margin: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(138, 99, 210, 0.1);
     padding: 3rem 2rem;
     position: relative;
     z-index: 2;
-    backdrop-filter: blur(5px);
 }
 
 h2 {
@@ -313,7 +312,7 @@ h2:after {
     padding: 2rem;
     border: 2px solid var(--pastel-lavender);
     border-radius: 10px;
-    background-color: rgba(208, 184, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .detail-item h3 {
@@ -345,14 +344,13 @@ h2:after {
     font-style: italic;
     margin-top: 1rem;
     color: var(--pastel-purple);
-    opacity: 极 0.8;
+    opacity: 0.8;
     font-size: 0.9rem;
 }
 
 /* Стили для раздела с дресс-кодом */
 .dress-code {
-    background-color: rgba(255, 255, 255, 0.8); /* Белый с легкой прозрачностью */
-    border: 2px solid var(--pastel-lavender); /* Лавандовая рамка */
+    border: 2px solid var(--pastel-lavender);
 }
 
 .color-palette {
@@ -373,13 +371,12 @@ h2:after {
 
 /* Стили для раздела с подарками - ИСПРАВЛЕНО */
 .gifts {
-    background-color: rgba(255, 255, 255, 0.8); /* Белый с легкой прозрачностью */
-    border: 2px solid var(--pastel-mint); /* Мятная рамка */
+    border: 2px solid var(--pastel-mint);
 }
 
 /* Стили для формы RSVP */
 .rsvp {
-    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--pastel-pink);
 }
 
 #rsvp-form {
@@ -430,14 +427,14 @@ h2:after {
 .option-buttons {
     display: flex;
     flex-direction: column;
-    gap: 极 0.8rem;
+    gap: 0.8rem;
 }
 
 .option-button {
     display: flex;
     align-items: center;
     padding: 0.8rem;
-    border: 2极 solid var(--pastel-lavender);
+    border: 2px solid var(--pastel-lavender);
     border-radius: 50px;
     background-color: rgba(245, 240, 255, 0.7);
     cursor: pointer;
@@ -459,8 +456,7 @@ h2:after {
 
 /* Стили для контактов */
 .contacts {
-    background-color: rgba(255, 255, 255, 0.8); /* Белый с легкой прозрачностью */
-    border: 2px solid var(--pastel-blue); /* Голубая рамка */
+    border: 2px solid var(--pastel-blue);
 }
 
 .contacts a {
@@ -484,25 +480,57 @@ footer {
 
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+    
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
+        margin: 0 0 1.5rem 0;
     }
     
     .invitation-text p {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        padding: 0 1rem;
     }
     
     .invitation-text p:before,
     .invitation-text p:after {
-        width: 40px;
+        width: 30px;
+        margin-right: 15px;
+        margin-left: 15px;
     }
     
     .mini-calendar {
         width: 280px;
+        margin: 0 0 2rem 0;
+    }
+    
+    .calendar-header {
+        padding: 0.8rem;
+        font-size: 1.1rem;
+    }
+    
+    .calendar-body {
+        padding: 0.8rem;
+    }
+    
+    .days span {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+    
+    #countdown {
+        font-size: 1.1rem;
+        padding: 0.8rem 1.2rem;
+        margin: 0 1rem;
     }
     
     .details-grid {
         flex-direction: column;
+        gap: 2rem;
     }
     
     section {
@@ -514,16 +542,52 @@ footer {
         padding: 2rem 1rem;
     }
     
+    h2 {
+        font-size: 2rem;
+    }
+    
     .ceremony, .banquet {
-        font-size: 1.8rem !important;
+        font-size: 1.6rem !important;
     }
     
     .option-buttons {
         flex-direction: column;
     }
     
-    #极 {
-        font-size: 1.2rem;
-        padding: 0.8rem 1.5rem;
+    .petal {
+        width: 20px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .invitation-text p {
+        font-size: 1.4rem;
+    }
+    
+    .mini-calendar {
+        width: 260px;
+    }
+    
+    .days span {
+        padding: 5px;
+        font-size: 0.75rem;
+    }
+    
+    #countdown {
+        font-size: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .color-box {
+        width: 40px;
+        height: 40px;
     }
 }

@@ -36,21 +36,21 @@ document.getElementById('rsvp-form').addEventListener('submit', function(event) 
     }, 5000);
 });
 
-// Создаем анимацию падающих листьев
-function createLeaves() {
-    const leavesContainer = document.querySelector('.leaves-container');
+// Создаем анимацию падающих лепестков
+function createPetals() {
+    const petalsContainer = document.querySelector('.petals-container');
     
     for (let i = 0; i < 25; i++) {
-        const leaf = document.createElement('div');
-        leaf.classList.add('leaf');
-        leaf.style.left = `${Math.random() * 100}%`;
-        leaf.style.animationDuration = `${Math.random() * 10 + 8}s`;
-        leaf.style.animationDelay = `${Math.random() * 5}s`;
-        leavesContainer.appendChild(leaf);
+        const petal = document.createElement('div');
+        petal.classList.add('petal');
+        petal.style.left = `${Math.random() * 100}%`;
+        petal.style.animationDuration = `${Math.random() * 10 + 8}s`;
+        petal.style.animationDelay = `${Math.random() * 5}s`;
+        petalsContainer.appendChild(petal);
     }
 }
 
-createLeaves();
+createPetals();
 
 // Добавляем плавную прокрутку для якорных ссылок
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

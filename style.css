@@ -1,15 +1,12 @@
-/* Обновленная осенняя цветовая палитра */
+/* Сиренево-фиолетовая цветовая палитра */
 :root {
-    --autumn-orange: #FFA726; /* Более темный оранжевый */
-    --autumn-red: #E64A19; /* Более темный красно-оранжевый */
-    --autumn-brown: #5D4037; /* Темный коричневый */
-    --autumn-beige: #FFCCBC; /* Светлый бежевый */
-    --autumn-cream: #FFF8E1; /* Более светлый кремовый (ближе к белому) */
-    --autumn-light-orange: #FFE0B2; /* Светлый оранжевый */
-    --autumn-dark-orange: #E65100; /* Темный оранжевый для текста */
-    --autumn-white: #FFFFFF;
-    --autumn-black: #333333;
-    --autumn-gray: #9E9E9E;
+    --lavender-light: #F5F0FF; /* Светлый лавандовый для фона */
+    --lavender: #E6D7FF;       /* Лавандовый */
+    --lilac: #D0B8FF;         /* Сиреневый */
+    --purple: #8A63D2;        /* Фиолетовый для акцентов */
+    --purple-dark: #6640A3;   /* Темно-фиолетовый */
+    --white: #FFFFFF;
+    --gray-light: #F8F6FF;    /* Светло-серый с фиолетовым оттенком */
 }
 
 /* Общие стили для всего документа */
@@ -21,15 +18,15 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    color: var(--autumn-black);
+    color: var(--purple-dark);
     line-height: 1.6;
-    background: var(--autumn-cream); /* Более светлый фон, ближе к белому */
+    background: var(--lavender-light);
 }
 
 h1, h2, h3 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
-    color: var(--autumn-dark-orange); /* Темный оранжевый для заголовков */
+    color: var(--purple);
 }
 
 .container {
@@ -41,17 +38,17 @@ h1, h2, h3 {
 /* Стили для главного экрана */
 .hero {
     height: 100vh;
-    color: var(--autumn-black);
+    color: var(--purple-dark);
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    background: var(--autumn-cream); /* Убрали градиент, оставили светлый фон */
+    background: var(--lavender-light);
 }
 
-.leaves-container {
+.petals-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -62,40 +59,43 @@ h1, h2, h3 {
     pointer-events: none;
 }
 
-.leaf {
+.petal {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    background: var(--autumn-orange);
-    opacity: 0.6;
-    border-radius: 50% 50% 50% 0;
-    animation-name: falling-leaf;
+    width: 24px;
+    height: 36px;
+    background: var(--lilac);
+    opacity: 0.7;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation-name: falling-petal;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     transform-origin: center;
+    box-shadow: 0 0 10px rgba(142, 102, 214, 0.2);
 }
 
-.leaf:nth-child(4n) {
-    background: var(--autumn-red);
-    width: 25px;
-    height: 25px;
+.petal:nth-child(4n) {
+    background: var(--lavender);
+    width: 20px;
+    height: 30px;
+    opacity: 0.6;
 }
 
-.leaf:nth-child(3n) {
-    background: var(--autumn-brown);
-    width: 35px;
-    height: 35px;
-    opacity: 0.4;
+.petal:nth-child(3n) {
+    background: var(--purple);
+    width: 28px;
+    height: 42px;
+    opacity: 0.5;
 }
 
-.leaf:nth-child(5n) {
-    border-radius: 50% 0 50% 50%;
+.petal:nth-child(5n) {
+    border-radius: 50% 50% 40% 40% / 50% 50% 50% 50%;
+    transform: rotate(45deg);
 }
 
-@keyframes falling-leaf {
+@keyframes falling-petal {
     0% {
         transform: translateY(-100px) translateX(0) rotate(0deg);
-        opacity: 0.6;
+        opacity: 0.7;
     }
     50% {
         opacity: 0.8;
@@ -121,20 +121,20 @@ h1, h2, h3 {
 .hero h1 {
     font-size: 4.5rem;
     margin: 0 0 2rem 0;
-    color: var(--autumn-dark-orange);
+    color: var(--purple);
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
-    order: 2; /* Порядок: приглашение, имена, календарь, отсчет */
+    order: 2;
 }
 
 /* Стили для текста приглашения */
 .invitation-text {
     margin: 0 0 2rem 0;
-    order: 1; /* Первый элемент */
+    order: 1;
 }
 
 .invitation-text p {
     font-size: 2.5rem;
-    color: var(--autumn-dark-orange); /* Темный оранжевый */
+    color: var(--purple);
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
@@ -150,7 +150,7 @@ h1, h2, h3 {
     top: 50%;
     width: 80px;
     height: 3px;
-    background: var(--autumn-dark-orange); /* Темный оранжевый */
+    background: var(--lilac);
 }
 
 .invitation-text p:before {
@@ -165,18 +165,18 @@ h1, h2, h3 {
 
 /* Стили для мини-календаря */
 .mini-calendar {
-    background: var(--autumn-white);
+    background: var(--white);
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(138, 99, 210, 0.15);
     margin: 0 0 3rem 0;
     overflow: hidden;
     width: 300px;
-    order: 3; /* Третий элемент */
+    order: 3;
 }
 
 .calendar-header {
-    background: linear-gradient(135deg, var(--autumn-orange) 0%, var(--autumn-red) 100%);
-    color: var(--autumn-white);
+    background: linear-gradient(135deg, var(--lilac) 0%, var(--purple) 100%);
+    color: var(--white);
     padding: 1rem;
     font-weight: bold;
     font-size: 1.2rem;
@@ -192,7 +192,8 @@ h1, h2, h3 {
     gap: 5px;
     margin-bottom: 10px;
     font-size: 0.8rem;
-    color: var(--autumn-gray);
+    color: var(--purple);
+    opacity: 0.7;
 }
 
 .weekdays span {
@@ -210,6 +211,7 @@ h1, h2, h3 {
     padding: 8px;
     border-radius: 50%;
     font-size: 0.9rem;
+    color: var(--purple-dark);
 }
 
 .days .empty {
@@ -217,10 +219,10 @@ h1, h2, h3 {
 }
 
 .days .wedding-day {
-    background: linear-gradient(135deg, var(--autumn-orange) 0%, var(--autumn-red) 100%);
-    color: var(--autumn-white);
+    background: linear-gradient(135deg, var(--lilac) 0%, var(--purple) 100%);
+    color: var(--white);
     font-weight: bold;
-    box-shadow: 0 0 0 3px var(--autumn-white), 0 0 0 5px var(--autumn-dark-orange);
+    box-shadow: 0 0 0 3px var(--white), 0 0 0 5px var(--lilac);
     animation: pulse 2s infinite;
 }
 
@@ -233,15 +235,15 @@ h1, h2, h3 {
 /* Стили для обратного отсчета */
 #countdown {
     font-size: 1.5rem;
-    color: var(--autumn-dark-orange);
+    color: var(--purple);
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
     margin: 0;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(230, 215, 255, 0.3);
     padding: 1rem 2rem;
     border-radius: 10px;
     display: inline-block;
     backdrop-filter: blur(5px);
-    order: 4; /* Четвертый элемент */
+    order: 4;
 }
 
 /* Остальные стили */
@@ -254,7 +256,7 @@ section {
     background-color: rgba(255, 255, 255, 0.8);
     margin: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(138, 99, 210, 0.1);
     padding: 3rem 2rem;
     position: relative;
     z-index: 2;
@@ -264,7 +266,7 @@ section {
 h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: var(--autumn-dark-orange);
+    color: var(--purple);
     position: relative;
     display: inline-block;
 }
@@ -276,7 +278,7 @@ h2:after {
     left: 25%;
     width: 50%;
     height: 3px;
-    background-color: var(--autumn-orange);
+    background-color: var(--lilac);
 }
 
 /* Сетка для деталей */
@@ -291,46 +293,47 @@ h2:after {
     flex: 1;
     min-width: 250px;
     padding: 2rem;
-    border: 2px solid var(--autumn-beige);
+    border: 2px solid var(--lavender);
     border-radius: 10px;
-    background-color: rgba(255, 204, 188, 0.3);
+    background-color: rgba(230, 215, 255, 0.3);
 }
 
 .detail-item h3 {
     margin-bottom: 1rem;
-    color: var(--autumn-dark-orange);
+    color: var(--purple);
     font-size: 1.8rem;
 }
 
 /* Увеличиваем конкретно "Церемония" и "Банкет" */
 .ceremony, .banquet {
     font-size: 2.2rem !important;
-    color: var(--autumn-dark-orange);
+    color: var(--purple);
 }
 
 .map-link {
     display: inline-block;
     margin-top: 1rem;
-    color: var(--autumn-dark-orange);
+    color: var(--purple);
     text-decoration: none;
     font-weight: bold;
 }
 
 .map-link:hover {
     text-decoration: underline;
-    color: var(--autumn-orange);
+    color: var(--purple-dark);
 }
 
 .note {
     font-style: italic;
     margin-top: 1rem;
-    color: var(--autumn-brown);
+    color: var(--purple);
+    opacity: 0.8;
     font-size: 0.9rem;
 }
 
 /* Стили для раздела с дресс-кодом */
 .dress-code {
-    background-color: rgba(255, 204, 188, 0.4);
+    background-color: rgba(230, 215, 255, 0.4);
 }
 
 .color-palette {
@@ -351,7 +354,7 @@ h2:after {
 
 /* Стили для раздела с подарками */
 .gifts {
-    background-color: rgba(255, 248, 225, 0.5);
+    background-color: rgba(245, 240, 255, 0.5);
 }
 
 /* Стили для формы RSVP */
@@ -370,15 +373,15 @@ h2:after {
 
 #rsvp-form input, #rsvp-form select {
     padding: 0.8rem;
-    border: 2px solid var(--autumn-beige);
+    border: 2px solid var(--lavender);
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
-    background-color: rgba(255, 248, 225, 0.7);
+    background-color: rgba(245, 240, 255, 0.7);
 }
 
 #rsvp-form button {
     padding: 1rem;
-    background-color: var(--autumn-dark-orange);
+    background-color: var(--purple);
     color: white;
     border: none;
     border-radius: 5px;
@@ -390,7 +393,7 @@ h2:after {
 }
 
 #rsvp-form button:hover {
-    background-color: var(--autumn-red);
+    background-color: var(--purple-dark);
 }
 
 /* Стили для кружков выбора */
@@ -401,7 +404,7 @@ h2:after {
 .attendance-options p {
     margin-bottom: 1rem;
     font-weight: bold;
-    color: var(--autumn-dark-orange);
+    color: var(--purple);
 }
 
 .option-buttons {
@@ -414,20 +417,20 @@ h2:after {
     display: flex;
     align-items: center;
     padding: 0.8rem;
-    border: 2px solid var(--autumn-beige);
+    border: 2px solid var(--lavender);
     border-radius: 50px;
-    background-color: rgba(255, 248, 225, 0.7);
+    background-color: rgba(245, 240, 255, 0.7);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .option-button:hover {
-    background-color: var(--autumn-beige);
+    background-color: var(--lavender);
 }
 
 .option-button input[type="radio"] {
     margin-right: 10px;
-    accent-color: var(--autumn-dark-orange);
+    accent-color: var(--purple);
 }
 
 .option-button span {
@@ -436,17 +439,17 @@ h2:after {
 
 /* Стили для контактов */
 .contacts {
-    background-color: rgba(255, 204, 188, 0.4);
+    background-color: rgba(230, 215, 255, 0.4);
 }
 
 .contacts a {
-    color: var(--autumn-dark-orange);
+    color: var(--purple);
     text-decoration: none;
     font-weight: bold;
 }
 
 .contacts a:hover {
-    color: var(--autumn-orange);
+    color: var(--purple-dark);
     text-decoration: underline;
 }
 
@@ -454,7 +457,7 @@ h2:after {
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: var(--autumn-brown);
+    background-color: var(--purple);
     color: white;
 }
 

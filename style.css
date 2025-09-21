@@ -1,11 +1,12 @@
 /* Осенняя цветовая палитра */
 :root {
-    --autumn-orange: #C86B39;
-    --autumn-red: #A73737;
+    --autumn-orange: #E67E22;
+    --autumn-red: #D35400;
     --autumn-brown: #6B4F3D;
-    --autumn-beige: #E3D9CA;
-    --autumn-cream: #F2E6DE;
-    --autumn-green: #6D8B74;
+    --autumn-beige: #FDE3A7;
+    --autumn-cream: #FEF5E7;
+    --autumn-light-orange: #FFE4C4;
+    --autumn-dark-orange: #E67E22;
 }
 
 /* Общие стили для всего документа */
@@ -19,7 +20,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #333;
     line-height: 1.6;
-    background-color: var(--autumn-cream);
+    background: linear-gradient(135deg, var(--autumn-light-orange) 0%, var(--autumn-beige) 100%);
 }
 
 h1, h2, h3 {
@@ -44,27 +45,7 @@ h1, h2, h3 {
     justify-content: center;
     position: relative;
     overflow: hidden;
-}
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://wallpapers.99px.ru/wallpapers/336181/') no-repeat center center/cover;
-    filter: blur(5px) brightness(0.5);
-    z-index: -3;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: -2;
+    background: linear-gradient(135deg, rgba(230, 126, 34, 0.1) 0%, rgba(211, 84, 0, 0.2) 100%);
 }
 
 .leaves-container {
@@ -73,18 +54,18 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 1;
     overflow: hidden;
 }
 
 .leaf {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff' opacity='0.3'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E");
+    width: 40px;
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E67E22' opacity='0.6'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E");
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.4;
+    opacity: 0.6;
     animation-name: falling-leaf;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -92,11 +73,14 @@ h1, h2, h3 {
 
 @keyframes falling-leaf {
     0% {
-        transform: translateY(-100px) rotate(0deg);
-        opacity: 0.4;
+        transform: translateY(-100px) translateX(0) rotate(0deg);
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.8;
     }
     100% {
-        transform: translateY(100vh) rotate(360deg);
+        transform: translateY(100vh) translateX(100px) rotate(360deg);
         opacity: 0;
     }
 }
@@ -110,8 +94,8 @@ h1, h2, h3 {
 .hero h1 {
     font-size: 4.5rem;
     margin-bottom: 2rem;
-    color: white;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+    color: var(--autumn-brown);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
 /* Стиль для календарных кубиков */
@@ -141,14 +125,14 @@ h1, h2, h3 {
     font-size: 3.5rem;
     font-weight: bold;
     color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .cube-front {
     background: linear-gradient(135deg, var(--autumn-orange) 0%, var(--autumn-red) 100%);
     transform: translateZ(60px);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cube-top {
@@ -166,45 +150,47 @@ h1, h2, h3 {
 .cube-month {
     font-size: 1.8rem;
     font-weight: bold;
-    color: white;
+    color: var(--autumn-brown);
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 0.5rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .cube-year {
     font-size: 1.8rem;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    color: var(--autumn-brown);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 /* Стили для обратного отсчета */
 #countdown {
     font-size: 1.5rem;
-    color: white;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    color: var(--autumn-brown);
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
     margin-top: 2rem;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.3);
     padding: 1rem 2rem;
     border-radius: 10px;
     display: inline-block;
+    backdrop-filter: blur(5px);
 }
 
-/* Остальные стили без изменений */
+/* Остальные стили */
 section {
     padding: 5rem 0;
 }
 
-.details, .dress-code, .gifts, .contacts {
+.details, .dress-code, .gifts, .contacts, .rsvp {
     text-align: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
     margin: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 3rem 2rem;
     position: relative;
     z-index: 2;
+    backdrop-filter: blur(5px);
 }
 
 h2 {
@@ -239,7 +225,7 @@ h2:after {
     padding: 2rem;
     border: 2px solid var(--autumn-beige);
     border-radius: 10px;
-    background-color: var(--autumn-cream);
+    background-color: rgba(253, 227, 167, 0.3);
 }
 
 .detail-item h3 {
@@ -275,7 +261,7 @@ h2:after {
 
 /* Стили для раздела с дресс-кодом */
 .dress-code {
-    background-color: var(--autumn-beige);
+    background-color: rgba(253, 227, 167, 0.4);
 }
 
 .color-palette {
@@ -296,17 +282,12 @@ h2:after {
 
 /* Стили для раздела с подарками */
 .gifts {
-    background-color: var(--autumn-cream);
+    background-color: rgba(254, 245, 231, 0.5);
 }
 
 /* Стили для формы RSVP */
 .rsvp {
-    background-color: white;
-    margin: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 3rem 2rem;
-    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 #rsvp-form {
@@ -323,7 +304,7 @@ h2:after {
     border: 2px solid var(--autumn-beige);
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--autumn-cream);
+    background-color: rgba(254, 245, 231, 0.7);
 }
 
 #rsvp-form button {
@@ -365,7 +346,7 @@ h2:after {
     padding: 0.8rem;
     border: 2px solid var(--autumn-beige);
     border-radius: 50px;
-    background-color: var(--autumn-cream);
+    background-color: rgba(254, 245, 231, 0.7);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -385,7 +366,7 @@ h2:after {
 
 /* Стили для контактов */
 .contacts {
-    background-color: var(--autumn-beige);
+    background-color: rgba(253, 227, 167, 0.4);
 }
 
 .contacts a {

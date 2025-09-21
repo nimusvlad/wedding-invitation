@@ -36,22 +36,12 @@ document.getElementById('rsvp-form').addEventListener('submit', function(event) 
     }, 5000);
 });
 
-// Добавляем дополнительные падающие листья
-function createMoreLeaves() {
-    const leavesContainer = document.querySelector('.fall-leaves');
-    const leafSymbols = ['🍂', '🍁', '🍃', '🥮'];
-    
-    for (let i = 0; i < 10; i++) {
-        const leaf = document.createElement('div');
-        leaf.classList.add('leaf');
-        leaf.textContent = leafSymbols[Math.floor(Math.random() * leafSymbols.length)];
-        leaf.style.left = `${Math.random() * 100}%`;
-        leaf.style.fontSize = `${Math.random() * 1.5 + 1}rem`;
-        leaf.style.animationDuration = `${Math.random() * 10 + 5}s`;
-        leaf.style.animationDelay = `${Math.random() * 5}s`;
-        leaf.style.opacity = `${Math.random() * 0.5 + 0.3}`;
-        leavesContainer.appendChild(leaf);
-    }
-}
-
-createMoreLeaves();
+// Добавляем плавную прокрутку для якорных ссылок
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});

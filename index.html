@@ -9,16 +9,14 @@
 </head>
 <body>
     <section class="hero">
+        <div class="hero-background"></div>
         <div class="hero-content">
-            <div class="fall-leaves">
-                <div class="leaf leaf-1">🍂</div>
-                <div class="leaf leaf-2">🍁</div>
-                <div class="leaf leaf-3">🍂</div>
-                <div class="leaf leaf-4">🍁</div>
-                <div class="leaf leaf-5">🍂</div>
+            <div class="calendar-date">
+                <div class="calendar-month">ОКТЯБРЬ</div>
+                <div class="calendar-day">18</div>
+                <div class="calendar-year">2025</div>
             </div>
             <h1>Анастасия & Виталий</h1>
-            <p>18 октября 2025</p>
             <div id="countdown"></div>
         </div>
     </section>
@@ -28,7 +26,7 @@
             <h2>Детали свадьбы</h2>
             <div class="details-grid">
                 <div class="detail-item">
-                    <h3>Церемония</h3>
+                    <h3 class="ceremony">Церемония</h3>
                     <p>18 октября 2025, 12:00</p>
                     <p>ЗАГС города Алушты</p>
                     <p>ул. 15-го Апреля, 10, Алушта</p>
@@ -36,7 +34,7 @@
                     <p class="note">Если вам неудобно в это время, мы не обидимся и ждём вас на банкете!</p>
                 </div>
                 <div class="detail-item">
-                    <h3>Банкет</h3>
+                    <h3 class="banquet">Банкет</h3>
                     <p>18 октября 2025, 17:00</p>
                     <p>Ресторан «Ангарский перевал»</p>
                     <p>городской округ Алушта</p>
@@ -74,12 +72,25 @@
             <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                 <input type="text" name="name" placeholder="Ваше имя" required>
                 <input type="tel" name="phone" placeholder="Ваш телефон">
-                <select name="attendance" required>
-                    <option value="" disabled selected>Вы сможете присутствовать?</option>
-                    <option value="ceremony_and_banquet">Буду на церемонии и банкете</option>
-                    <option value="only_banquet">Смогу присоединиться только на банкете</option>
-                    <option value="not_attending">К сожалению, не смогу присутствовать</option>
-                </select>
+                
+                <div class="attendance-options">
+                    <p>Вы сможете присутствовать?</p>
+                    <div class="option-buttons">
+                        <label class="option-button">
+                            <input type="radio" name="attendance" value="ceremony_and_banquet" required>
+                            <span>На церемонии и банкете</span>
+                        </label>
+                        <label class="option-button">
+                            <input type="radio" name="attendance" value="only_banquet">
+                            <span>Только на банкете</span>
+                        </label>
+                        <label class="option-button">
+                            <input type="radio" name="attendance" value="not_attending">
+                            <span>Не смогу присутствовать</span>
+                        </label>
+                    </div>
+                </div>
+                
                 <input type="number" name="guests" placeholder="Количество человек" min="1" required>
                 <textarea name="message" placeholder="Ваши пожелания или особые пожелания по меню (аллергии, предпочтения)"></textarea>
                 <button type="submit">Подтвердить</button>

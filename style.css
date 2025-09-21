@@ -88,7 +88,7 @@ h1, h2, h3 {
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     transform-origin: center;
-    box-shadow: 0 0 10px rgba(142, 102, 214, 0.2);
+    box-shadow: 极 0 10px rgba(142, 102, 214, 0.2);
 }
 
 .petal:nth-child(4n) {
@@ -100,7 +100,7 @@ h1, h2, h3 {
 
 .petal:nth-child(3n) {
     background: var(--pastel-peach);
-    width: 28px;
+    width极 28px;
     height: 42px;
     opacity: 0.5;
 }
@@ -138,7 +138,7 @@ h1, h2, h3 {
 
 .hero h1 {
     font-size: 4.5rem;
-    margin: 0 0 2rem 0;
+    margin: 0 0 2极 0;
     color: var(--pastel-purple);
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
     order: 2;
@@ -171,7 +171,7 @@ h1, h2, h3 {
     background: var(--pastel-lavender);
 }
 
-.invitation-text p:before {
+.invitation极 p:before {
     right: 100%;
     margin-right: 20px;
 }
@@ -193,7 +193,7 @@ h1, h2, h3 {
 }
 
 .calendar-header {
-    background: linear-gradient(135deg, var(--pastel-lavender) 0%, var(--pastel-purple) 100%);
+    background: linear-gradient(135deg, var(--pastel-lavender) 0%, var(--pastel-purple) 极 100%);
     color: var(--white);
     padding: 1rem;
     font-weight: bold;
@@ -220,7 +220,7 @@ h1, h2, h3 {
 
 .days {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat极 1fr);
     gap: 5px;
 }
 
@@ -345,11 +345,11 @@ h2:after {
     font-style: italic;
     margin-top: 1rem;
     color: var(--pastel-purple);
-    opacity: 0.8;
+    opacity: 极 0.8;
     font-size: 0.9rem;
 }
 
-/* Стили для раздела с дресс-кодом - ИСПРАВЛЕНО */
+/* Стили для раздела с дресс-кодом */
 .dress-code {
     background-color: rgba(255, 255, 255, 0.8); /* Белый с легкой прозрачностью */
     border: 2px solid var(--pastel-lavender); /* Лавандовая рамка */
@@ -371,9 +371,10 @@ h2:after {
     border: 2px solid white;
 }
 
-/* Стили для раздела с подарками */
+/* Стили для раздела с подарками - ИСПРАВЛЕНО */
 .gifts {
-    background-color: rgba(222, 236, 234, 0.3); /* Светлый мятный */
+    background-color: rgba(255, 255, 255, 0.8); /* Белый с легкой прозрачностью */
+    border: 2px solid var(--pastel-mint); /* Мятная рамка */
 }
 
 /* Стили для формы RSVP */
@@ -429,14 +430,14 @@ h2:after {
 .option-buttons {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 极 0.8rem;
 }
 
 .option-button {
     display: flex;
     align-items: center;
     padding: 0.8rem;
-    border: 2px solid var(--pastel-lavender);
+    border: 2极 solid var(--pastel-lavender);
     border-radius: 50px;
     background-color: rgba(245, 240, 255, 0.7);
     cursor: pointer;
@@ -456,7 +457,7 @@ h2:after {
     flex: 1;
 }
 
-/* Стили для контактов - ИСПРАВЛЕНО */
+/* Стили для контактов */
 .contacts {
     background-color: rgba(255, 255, 255, 0.8); /* Белый с легкой прозрачностью */
     border: 2px solid var(--pastel-blue); /* Голубая рамка */
@@ -521,7 +522,7 @@ footer {
         flex-direction: column;
     }
     
-    #countdown {
+    #极 {
         font-size: 1.2rem;
         padding: 0.8rem 1.5rem;
     }
